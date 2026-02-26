@@ -32,8 +32,7 @@ export default function App() {
       if (data.length === 0) {
         toast("No movies found for your request.");
       }
-    } catch (error) {
-      console.error(error);
+    } catch {
       setIsError(true);
       setMovies([]);
     } finally {
@@ -56,7 +55,7 @@ export default function App() {
 
       {!isLoader && isError && <ErrorMessage />}
 
-      {!isLoader && !isError && movies.length > 0 && (
+      {movies.length > 0 && (
         <MovieGrid movies={movies} onSelect={handleSelectMovie} />
       )}
 

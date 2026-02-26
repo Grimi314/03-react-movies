@@ -1,11 +1,11 @@
 import css from "./MovieGrid.module.css";
 import type { Movie } from "../../types/movie";
-interface MavieGridProps {
+interface MovieGridProps {
   movies: Movie[];
   onSelect: (movie: Movie) => void;
 }
 
-export default function MovieGrid({ movies, onSelect }: MavieGridProps) {
+export default function MovieGrid({ movies, onSelect }: MovieGridProps) {
   if (!movies || movies.length === 0) {
     return null;
   }
